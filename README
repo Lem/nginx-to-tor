@@ -1,0 +1,15 @@
+How it works:
+
+
+  user -> nginx -> privoxy -> tor ----internet
+                                          |
+                                          |
+                                          |
+                         httpd <- tor <----
+         
+ nginx will use privoxy as http-proxy which
+ will be tunneled through the onion-network,
+ so the backend will be hidden completely.
+ Oh, and the frontend can use a TLD.
+ That's great, your hidden httpd will be
+ available for everyone :).                 

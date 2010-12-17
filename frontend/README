@@ -1,0 +1,21 @@
+For setting up a frontend you need to 
+do the following steps:
+
+- Download and patch version 0.8.54 of nginx
+	http://nginx.org/
+- Download/compile latest torsocks 
+	http://code.google.com/p/torsocks/
+- Fire up Privoxy. 
+  Note that the options accept-intercepted-requests 
+  and forward-socks4a are important. If 
+  accept-intercepted-requests is not set to 1, 
+  nginx will not get through privoxy.
+  You can use config.privoxy.
+- Edit your nginx.conf:
+  location / {
+           proxy_pass http://your.onion;
+  }
+- Start nginx with tordns:
+  ~$ usewithtor /path/to/nginx
+  
+

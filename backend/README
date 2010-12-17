@@ -1,0 +1,24 @@
+For setting up a backend you need
+to do following:
+
+- Edit torrc for running a hidden
+  service:
+  HiddenServiceDir /etc/tor/hidden_service/
+  HiddenServicePort 80 127.0.0.1:44
+
+  With the lines obove, a hiddenservice on 
+  port 80 will connect to your local
+  port 44. Now you can run an httpd
+  listening on port 44.
+
+- Grab your .onion from 
+  HiddenServiceDir/hostname and 
+  put it into the nginx.conf of
+  your frontend (proxy_pass).
+
+- Configurate your webserver
+  and/or scipts to use the
+  adresse of your frontend.
+
+- Start tor and httpd
+
